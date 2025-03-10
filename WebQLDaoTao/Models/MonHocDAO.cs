@@ -16,7 +16,7 @@ namespace WebQLDaoTao.Models
 
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringName"].ConnectionString);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select * from monhoc", conn);
+            SqlCommand cmd = new SqlCommand("select * from MonHoc", conn);
             SqlDataReader rd = cmd.ExecuteReader();
             while (rd.Read())
             {
@@ -36,7 +36,7 @@ namespace WebQLDaoTao.Models
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringName"].ConnectionString);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("insert into monhoc values(@MaMH, @TenMH, @SoTiet)", conn);
+            SqlCommand cmd = new SqlCommand("insert into MonHoc values(@MaMH, @TenMH, @SoTiet)", conn);
             cmd.Parameters.AddWithValue("MaMH", mh.MaMH);
             cmd.Parameters.AddWithValue("TenMH", mh.TenMH);
             cmd.Parameters.AddWithValue("SoTiet", mh.SoTiet);
@@ -48,7 +48,7 @@ namespace WebQLDaoTao.Models
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringName"].ConnectionString);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("update monhoc set TenMH = @TenMH, SoTiet = @SoTiet where MaMH = @MaMH", conn);
+            SqlCommand cmd = new SqlCommand("update MonHoc set TenMH = @TenMH, SoTiet = @SoTiet where MaMH = @MaMH", conn);
             cmd.Parameters.AddWithValue("MaMH", mh.MaMH);
             cmd.Parameters.AddWithValue("TenMH", mh.TenMH);
             cmd.Parameters.AddWithValue("SoTiet", mh.SoTiet);
@@ -60,7 +60,7 @@ namespace WebQLDaoTao.Models
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringName"].ConnectionString);
             conn.Open();
-            SqlCommand cmd = new SqlCommand("delete from monhoc where MaMH = @MaMH", conn);
+            SqlCommand cmd = new SqlCommand("delete from MonHoc where MaMH = @MaMH", conn);
             cmd.Parameters.AddWithValue("MaMH", mamh);
             return cmd.ExecuteNonQuery();
         }
