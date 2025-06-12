@@ -12,5 +12,6 @@ namespace WebQLDaoTao.Models
         public string MaMH { set; get; }
         public float? Diem { set; get; }
         public string HoTenSV { set; get; }
+        public
     }
 }
